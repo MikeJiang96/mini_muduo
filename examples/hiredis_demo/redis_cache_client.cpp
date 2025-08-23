@@ -137,6 +137,7 @@ void RedisCacheClient::trackKey(const std::string &key,
 
     keyInvalidatedCbs_[key] = std::move(keyInvalidatedCb);
 
+    // FIXME: Max wait count
     auto getKeyAfterInitedFunc = [this, key] {
         {
             std::unique_lock lg{mu_};
@@ -167,7 +168,7 @@ int RedisCacheClient::setKey(const std::string &key,
     return writeConn_.setKey(
         key,
         value,
-        [key, cb = std::move(cb)](redisReply *) {
+        [key, cb = std::move(cb)](redisReply *) mutable {
             MINI_MUDUO_LOG_DEBUG("key {} set done", key);
 
             if (cb) {

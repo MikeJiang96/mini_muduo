@@ -31,7 +31,7 @@ TcpServer::~TcpServer() {
 
         item.second.reset();
 
-        conn->getLoop()->runInLoop([conn = std::move(conn)] {
+        conn->getLoop()->runInLoop([conn] {
             conn->onConnectionDestroyed();
         });
     }

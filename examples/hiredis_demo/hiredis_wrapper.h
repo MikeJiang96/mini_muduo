@@ -70,7 +70,7 @@ public:
     // TODO: Support full TTL option
     int setKey(const std::string &key,
                const std::vector<char> value,
-               CommandCallback cb,
+               CommandCallback cb = {},
                std::chrono::seconds ttl = std::chrono::seconds(0));
 
     int getKey(const std::string &key, CommandCallback cb);
