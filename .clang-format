@@ -1,0 +1,53 @@
+---
+Language:        Cpp
+BasedOnStyle:  Google
+AccessModifierOffset: -4
+AllowShortEnumsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLambdasOnASingleLine: None
+AllowShortLoopsOnASingleLine: false
+BinPackArguments: false
+BinPackParameters: false
+BreakConstructorInitializers: BeforeComma
+ColumnLimit:     120
+DerivePointerAlignment: false
+EmptyLineBeforeAccessModifier: Always
+IncludeCategories:
+  - Regex:           '^<mini_muduo/.*'
+    Priority:        5
+    SortPriority:    0
+    CaseSensitive:   false
+  - Regex:           '^<hiredis_demo/.*'
+    Priority:        6
+    SortPriority:    0
+    CaseSensitive:   false
+  - Regex:           '^<hiredis/.*'
+    Priority:        4
+    SortPriority:    0
+    CaseSensitive:   false
+  - Regex:           '^<ext/.*\.h>'
+    Priority:        2
+    SortPriority:    0
+    CaseSensitive:   false
+  - Regex:           '^<.*\.h>'
+    Priority:        1
+    SortPriority:    0
+    CaseSensitive:   false
+  - Regex:           '^<.*'
+    Priority:        2
+    SortPriority:    0
+    CaseSensitive:   false
+  - Regex:           '.*'
+    Priority:        3
+    SortPriority:    0
+    CaseSensitive:   false
+IndentGotoLabels: false
+IndentWidth:     4
+InsertNewlineAtEOF: true
+MainIncludeChar: Any
+PackConstructorInitializers: Never
+PointerAlignment: Right
+SeparateDefinitionBlocks: Always
+TabWidth:        4
+...
