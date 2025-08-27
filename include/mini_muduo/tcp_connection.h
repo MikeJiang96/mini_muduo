@@ -119,8 +119,8 @@ private:
     State state_ = State::CONNECTING;
 
     // Pimpl
-    std::unique_ptr<Socket> socket_;
-    std::unique_ptr<Channel> channel_;
+    const std::unique_ptr<Socket> socket_;
+    const std::unique_ptr<Channel> channel_;
 
     const InetAddress localAddr_;
     const InetAddress peerAddr_;

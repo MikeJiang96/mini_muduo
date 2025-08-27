@@ -93,9 +93,9 @@ private:
     bool callingPendingFunctors_ = false;
 
     // Pimpl
-    std::unique_ptr<EPoller> poller_;
-    std::unique_ptr<Channel> wakeupChannel_;
-    std::unique_ptr<TimerQueue> timerQueue_;
+    const std::unique_ptr<EPoller> poller_;
+    const std::unique_ptr<Channel> wakeupChannel_;
+    const std::unique_ptr<TimerQueue> timerQueue_;
 
     std::mutex mu_;
     std::vector<Functor> pendingFunctors_;

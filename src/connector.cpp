@@ -136,7 +136,7 @@ int Connector::removeAndResetChannel() {
     const int sockFd = channel_->fd();
 
     // Can't reset channel_ here, because we are inside Channel::handleEvent
-    pOwnerLoop_->queueInLoop([this] {  // FIXME: unsafe. Why???
+    pOwnerLoop_->queueInLoop([this] {  // FIXME: unsafe. retry() can not guarantee happened after resetChannel()
         this->resetChannel();
     });
 

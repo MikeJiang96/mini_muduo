@@ -78,7 +78,7 @@ private:
     std::once_flag startOnce_;
 
     // Pimpl
-    std::unique_ptr<Acceptor> acceptor_;
+    const std::unique_ptr<Acceptor> acceptor_;
 
     ConnectionCallback connectionCb_ = defaultConnectionCallback;
     MessageCallback messageCb_ = defaultMessageCallback;
